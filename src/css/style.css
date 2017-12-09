@@ -1,0 +1,10 @@
+.amiui-iframe-scroll {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+}
+.amiui-text--primary {
+  color: #33B4FF;
+}
+.amiui-text--auxiliary {
+  color: #7F7F7F;
+}

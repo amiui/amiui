@@ -1,0 +1,86 @@
+/*show 从下往上出现*/
+.amiui-anim__up {
+  animation: anim__up 0.2s;
+  -webkit-animation: anim__up 0.2s;
+}
+/*hide 从上往下消失*/
+.amiui-anim__up--down {
+  animation: anim__up--down 0.2s;
+  -webkit-animation: anim__up--down 0.2s;
+}
+/*show 从上往下出现*/
+.amiui-anim__down {
+  animation: anim__down 0.2s;
+  -webkit-animation: anim__down 0.2s;
+}
+/*hide 从下往上消失*/
+.amiui-anim__down--up {
+  animation: anim-down-up 0.2s;
+  -webkit-animation: anim-down-up 0.2s;
+}
+/*show 从透明到不透明*/
+.amiui-anim__opacity--show {
+  animation: anim__opacity--show 0.2s;
+  -webkit-animation: anim__opacity--show 0.2s;
+}
+/*hide 从不透明到透明*/
+.amiui-anim__opacity--hide {
+  animation: anim__opacity--hide 0.2s;
+  -webkit-animation: anim__opacity--hide 0.2s;
+}
+@keyframes anim__up {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
+@keyframes anim__up--down {
+  0% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+  100% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+}
+@keyframes anim__down {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+}
+@keyframes anim__down--up {
+  0% {
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+  }
+  100% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+}
+@keyframes anim__opacity--show {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes anim__opacity--hide {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
