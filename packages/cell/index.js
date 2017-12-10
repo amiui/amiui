@@ -1,4 +1,4 @@
-import component from './searchbar.vue'
+import component from './cell.vue'
 
 component.install = (Vue) => {
   Vue.component(component.name, component);

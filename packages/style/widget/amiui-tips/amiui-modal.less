@@ -1,0 +1,77 @@
+@import "../../base/fn";
+
+.amiui-modal {
+  position: fixed;
+  z-index: 1000;
+  right: 8px;
+  left: 8px;
+  bottom: 8px;
+  background-color: @amiuiDialogBackgroundColor;
+  border-radius: 4px;
+  color: @amiuiTextColorTitle;
+  overflow: hidden;
+}
+
+.amiui-modal__hd {
+  padding: 1.3em @amiuiDialogGapWidth .5em;
+  text-align: center;
+}
+
+.amiui-modal__title {
+  font-size: @amiuiFontSizeDefault;
+  font-weight: 700;
+  text-align: center;
+}
+
+.amiui-modal__bd {
+  padding: 0 @amiuiDialogGapWidth .8em;
+  min-height: 40px;
+  font-size: @amiuiFontSizeDefault;
+  line-height: 1.3;
+  word-wrap: break-word;
+  word-break: break-all;
+  &:first-child{
+    padding:2.7em 20px 1.7em;
+    color:#353535;
+  }
+}
+.amiui-modal__ft {
+  position: relative;
+  line-height: 52px;
+  font-size: @amiuiFontSizeDefault;
+  display: flex;
+  &:after {
+    content: " ";
+    .setTopLine(@amiuiDialogLineColor);
+  }
+}
+
+.amiui-modal__btn {
+  text-align: center;
+  display: block;
+  flex: 1;
+  color: @amiuiDialogLinkColor;
+  background-color: @amiuiDialogBtnBgColor;
+  text-decoration: none;
+  .setTapColor();
+  &:active {
+    background-color: @amiuiDialogLinkActiveBc;
+  }
+
+  position: relative;
+  &:after {
+    content: " ";
+    .setLeftLine(@amiuiDialogLineColor);
+  }
+  &:first-child {
+    &:after {
+      display: none;
+    }
+  }
+}
+.amiui-modal__btn_default {
+  color: @amiuiTextColorMain;
+}
+.amiui-modal__btn_primary {
+  color: @amiuiColorDefault;
+}

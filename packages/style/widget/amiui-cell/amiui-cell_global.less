@@ -1,0 +1,92 @@
+/*
+* Tencent is pleased to support the open source community by making WeUI available.
+* 
+* Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
+* 
+* Licensed under the MIT License (the "License"); you may not use this file except in compliance
+* with the License. You may obtain a copy of the License at
+* 
+*       http://opensource.org/licenses/MIT
+* 
+* Unless required by applicable law or agreed to in writing, software distributed under the License is
+* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+* either express or implied. See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
+@import "../../base/fn";
+
+/*
+z-index:
+0: .amiui-swiped-btn
+1: .amiui-cell_swiped .amiui-cell__bd
+2: .amiui-cells和.amiui-cell的1px线
+*/
+
+.amiui-cells {
+    margin-top: @amiuiCellsMarginTop;
+    background-color: @amiuiCellBg;
+    line-height: @amiuiCellLineHeight;
+    font-size: @amiuiCellFontSize; //cell中间有效高度23px，跟客户端默认图标尺寸一致
+
+    overflow: hidden; //因为每个cell的border使用before元素left搞的，ie下伪元素的containing block估计跟标准不同，在cell上用oh不生效
+
+    // onepx
+    position: relative;
+    &:before {
+        .setTopLine(@amiuiCellBorderColor);
+        z-index: 2;
+    }
+    &:after {
+        .setBottomLine(@amiuiCellBorderColor);
+        z-index: 2;
+    }
+}
+
+.amiui-cells__title {
+    margin-top: .77em; // 15px - 行高
+    margin-bottom: .3em; // 8px - 行高
+    padding-left: @amiuiCellGapH;
+    padding-right: @amiuiCellGapH;
+    color: @amiuiTextColorGray;
+    font-size: @amiuiCellTipsFontSize;
+
+    & + .amiui-cells {
+        margin-top: 0;
+    }
+}
+
+.amiui-cells__tips {
+    margin-top: .3em; // 8px - 行高
+    color: @amiuiTextColorGray;
+    padding-left: @amiuiCellGapH;
+    padding-right: @amiuiCellGapH;
+    font-size: @amiuiCellTipsFontSize;
+}
+
+.amiui-cell {
+    padding: @amiuiCellGapV @amiuiCellGapH;
+    position: relative; //这个是为了兼容cells容器onepx方案被before挡住而做的
+    display: flex;
+    align-items: center;
+    &:before {
+        .setTopLine(@amiuiCellBorderColor);
+        left: @amiuiCellGapH;
+        z-index: 2;
+    }
+    &:first-child {
+        &:before {
+            display: none;
+        }
+    }
+}
+.amiui-cell_primary{
+    align-items: flex-start;
+}
+.amiui-cell__bd{
+    flex: 1;
+}
+.amiui-cell__ft {
+    text-align: right;
+    color: @amiuiTextColorGray;
+}

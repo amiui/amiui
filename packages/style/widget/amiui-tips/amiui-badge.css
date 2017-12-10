@@ -1,20 +1,3 @@
-.amiui-shade {
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-}
-.weui-shade_transparent {
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-}
 /*
 * Tencent is pleased to support the open source community by making WeUI available.
 * 
@@ -210,87 +193,34 @@
 * either express or implied. See the License for the specific language governing permissions and
 * limitations under the License.
 */
-.amiui-modal {
-  position: fixed;
-  z-index: 1000;
-  right: 8px;
-  left: 8px;
-  bottom: 8px;
-  background-color: #FFFFFF;
-  border-radius: 4px;
-  color: #333333;
-  overflow: hidden;
-}
-.amiui-modal__hd {
-  padding: 1.3em 1.6em 0.8em;
+/*
+* Tencent is pleased to support the open source community by making WeUI available.
+* 
+* Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
+* 
+* Licensed under the MIT License (the "License"); you may not use this file except in compliance
+* with the License. You may obtain a copy of the License at
+* 
+*       http://opensource.org/licenses/MIT
+* 
+* Unless required by applicable law or agreed to in writing, software distributed under the License is
+* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+* either express or implied. See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+.amiui-badge {
+  display: inline-block;
+  padding: .15em .4em;
+  min-width: 8px;
+  border-radius: 18px;
+  background-color: #F43530;
+  color: #FFFFFF;
+  line-height: 1.2;
   text-align: center;
+  font-size: 12px;
+  vertical-align: middle;
 }
-.amiui-modal__title {
-  font-size: 14px;
-  font-weight: 700;
-  text-align: center;
-}
-.amiui-modal__bd {
-  padding: 0 1.6em 0.8em;
-  min-height: 40px;
-  font-size: 14px;
-  line-height: 1.3;
-  word-wrap: break-word;
-  word-break: break-all;
-}
-.amiui-modal__bd:first-child {
-  padding: 2.7em 20px 1.7em;
-  color: #353535;
-}
-.amiui-modal__ft {
-  position: relative;
-  line-height: 52px;
-  font-size: 14px;
-  display: flex;
-}
-.amiui-modal__ft:after {
-  content: " ";
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  height: 1px;
-  border-top: 1px solid #D5D5D6;
-  color: #D5D5D6;
-  transform-origin: 0 0;
-  transform: scaleY(0.5);
-}
-.amiui-modal__btn {
-  text-align: center;
-  display: block;
-  flex: 1;
-  color: #3CC51F;
-  background-color: #f5f5f5;
-  text-decoration: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  position: relative;
-}
-.amiui-modal__btn:active {
-  background-color: #EEEEEE;
-}
-.amiui-modal__btn:after {
-  content: " ";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 1px;
-  bottom: 0;
-  border-left: 1px solid #D5D5D6;
-  color: #D5D5D6;
-  transform-origin: 0 0;
-  transform: scaleX(0.5);
-}
-.amiui-modal__btn:first-child:after {
-  display: none;
-}
-.amiui-modal__btn_default {
-  color: #555555;
-}
-.amiui-modal__btn_primary {
-  color: #33B4FF;
+.amiui-badge_dot {
+  padding: .4em;
+  min-width: 0;
 }

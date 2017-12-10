@@ -1,5 +1,5 @@
 <template>
-  <div :style="style">
+  <div :style="{zIndex: zIndex}">
     <transition
         :enter-active-class="shadeEnter"
         :leave-active-class="shadeLeave">
@@ -7,7 +7,7 @@
            v-show="show"
            class="amiui-shade"
            @click="shadeClick"
-           :style="style">
+           :style="{zIndex: zIndex}">
       </div>
     </transition>
     <transition
@@ -15,32 +15,35 @@
         :leave-active-class="bodyLeave"
         @after-enter="$emit('modal-show')"
         @after-leave="$emit('modal-hide')">
-      <div class="amiui-modal" v-show="show" ref="body" :style="style">
+      <div class="amiui-modal" v-show="show" ref="body" :style="{zIndex: zIndex}">
         <div v-if="$slots.title || title"
-             class="amiui-modal__title">
-          <slot name="title"></slot>
-          {{ title }}
+             class="amiui-modal__hd">
+          <div class="amiui-modal__title">
+            <slot name="title"></slot>
+            {{ title }}
+          </div>
         </div>
-        <div class="amiui-modal__content"
+        <div class="amiui-modal__bd"
              :style="contentStyle"
              ref="content">
-            <div :class="dialogClass" v-if="$slots.dialog || dialog">
-              <slot name="dialog"></slot>
-              <div v-html="dialog"></div>
-            </div>
+          <div class="amiui-modal__dialog"
+               v-if="$slots.dialog || dialog">
+            <slot name="dialog"></slot>
+            {{ dialog }}
+          </div>
+          <div v-if="$slots.default || content">
+            <slot name="content"></slot>
+            <div v-html="content"></div>
+          </div>
         </div>
-        <div v-if="$slots.default || content">
-          <slot name="content"></slot>
-          <div v-html="content"></div>
-        </div>
-        <div v-if="btn.length" class="amiui-modal__footer">
-          <a v-if="btn.length > 1"
-             class="amiui-modal__btn amiui-text--auxiliary"
-             @click="cancel">
+        <div class="amiui-modal__ft">
+          <a class="amiui-modal__btn amiui-modal__btn_default"
+             @click="cancel"
+             v-if="btn.length > 1">
             {{ btn[1] }}
           </a>
-          <a class="amiui-modal__btn amiui-text--primary"
-             @click="$emit('yes')">
+          <a class="amiui-modal__btn amiui-modal__btn_primary"
+             @click="yes" >
             {{ btn[0] }}
           </a>
         </div>
@@ -50,9 +53,7 @@
 </template>
 <script>
   import './modal.css'
-  import '../shadow/shade.css'
-  import '../animation/animation.css'
-
+  import '../style/widget/amiui-animate/amiui-animate.css'
   import visibleSyncShow from '../../src/mixins/visibleSyncShow.js';
 
   export default {
@@ -84,45 +85,39 @@
         type: Number, 'default': 1
       },
       btn: {          //弹出层的按钮最多显示2个  ['确定','取消']
-        type: Array, 'default' () {
+        type: Array, 'default'() {
           return []
         }
       },
-      closeOnClickModal:{  //决定是否可以点击阴影关闭
+      closeOnClickModal: {  //决定是否可以点击阴影关闭
         type: Boolean, 'default': true
       },
 
     },
     data() {
       return {
-        anim: [
-          ['amiui-anim__opacity--show', 'amiui-anim__opacity--hide'],//动画0 从不透明到透明
-          ['amiui-anim__up', 'amiui-anim__up--down'],                //动画1 从下往上
-          ['amiui-anim__down', 'amiui-anim__down--up']               //动画2 从上往下
+        animate: [
+          ['amiui-animate-fade-in', 'amiui-animate-fade-out'],                   //动画0 从不透明到透明
+          ['amiui-animate-down-slide-up', 'amiui-animate-down-slide-down'],      //动画1 从下往上
+          ['amiui-animate-up-slide-down', 'amiui-animate-up-slide-up']           //动画2 从上往下
         ],
         contentMaxHeight: 160
       }
     },
     computed: {
-      style() {
-        return {zIndex: this.zIndex}
-      },
-      dialogClass(){
-        return 'amiui-modal__dialog' +  (this.$slots.title || this.title ? ' amiui-modal__dialog--pad' : '')
-      },
       shadeEnter() {
-        return this.animation > -1 && this.animation < 3 ? this.anim[0][0] : ''
+        return this.animation > -1 && this.animation < 3 ? this.animate[0][0] : ''
       },
       shadeLeave() {
-        return this.animation > -1 && this.animation < 3 ? this.anim[0][1]  : ''
+        return this.animation > -1 && this.animation < 3 ? this.animate[0][1] : ''
       },
       bodyEnter() {
-        return this.animation > -1 && this.animation < 3 ? this.anim[this.animation][0] : ''
+        return this.animation > -1 && this.animation < 3 ? this.animate[this.animation][0] : ''
       },
       bodyLeave() {
-        return this.animation > -1 && this.animation < 3 ? this.anim[this.animation][1] : ''
+        return this.animation > -1 && this.animation < 3 ? this.animate[this.animation][1] : ''
       },
-      contentStyle () {
+      contentStyle() {
         let style = {
           'max-height': this.contentMaxHeight + 'px'
         };
@@ -133,16 +128,16 @@
       }
     },
     methods: {
-      yes(){
+      yes() {
         this.$emit('yes')
       },
-      cancel(){
+      cancel() {
         this.show = false;
         this.$emit('cancel')
       },
-      shadeClick(){
+      shadeClick() {
         this.$emit('shade-click');
-        if (this.closeOnClickModal){
+        if (this.closeOnClickModal) {
           this.cancel();
         }
       }

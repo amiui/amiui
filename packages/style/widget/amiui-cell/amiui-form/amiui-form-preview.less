@@ -1,0 +1,106 @@
+/*
+* Tencent is pleased to support the open source community by making WeUI available.
+* 
+* Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
+* 
+* Licensed under the MIT License (the "License"); you may not use this file except in compliance
+* with the License. You may obtain a copy of the License at
+* 
+*       http://opensource.org/licenses/MIT
+* 
+* Unless required by applicable law or agreed to in writing, software distributed under the License is
+* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+* either express or implied. See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+
+@import "../../../base/fn";
+
+.amiui-form-preview{
+    position: relative;
+    background-color: #FFFFFF;
+    &:before{
+        .setTopLine(@amiuiCellBorderColor);
+    }
+    &:after{
+        .setBottomLine(@amiuiCellBorderColor);
+    }
+}
+.amiui-form-preview__hd{
+    position: relative;
+    padding: @amiuiCellGapV @amiuiCellGapH;
+    text-align: right;
+    line-height: 2.5em;
+    &:after{
+        .setBottomLine(@amiuiCellBorderColor);
+        left: @amiuiCellGapH;
+    }
+    .amiui-form-preview__value{
+        font-style: normal;
+        font-size: 1.6em;
+    }
+}
+.amiui-form-preview__bd{
+    padding: @amiuiCellGapV @amiuiCellGapH;
+    font-size: .9em;
+    text-align: right;
+    color: @amiuiTextColorGray;
+    line-height: 2;
+}
+.amiui-form-preview__ft{
+    position: relative;
+    line-height: 50px;
+    display: flex;
+    &:before {
+        .setTopLine(@amiuiDialogLineColor);
+    }
+}
+.amiui-form-preview__item{
+    overflow: hidden;
+}
+.amiui-form-preview__label{
+    float: left;
+    margin-right: 1em;
+    min-width: 4em;
+    color: @amiuiTextColorGray;
+    text-align: justify;
+    text-align-last: justify;
+}
+.amiui-form-preview__value{
+    display: block;
+    overflow: hidden;
+    word-break:normal;
+    word-wrap: break-word;
+}
+.amiui-form-preview__btn {
+    position: relative;
+    display: block;
+    flex: 1;
+    color: @amiuiDialogLinkColor;
+    text-align: center;
+    .setTapColor();
+    button&{
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        line-height: inherit;
+        font-size: inherit;
+    }
+    &:active {
+        background-color: @amiuiDialogLinkActiveBc;
+    }
+    &:after {
+        .setLeftLine(@amiuiDialogLineColor);
+    }
+    &:first-child {
+        &:after {
+            display: none;
+        }
+    }
+}
+.amiui-form-preview__btn_default {
+    color: @amiuiTextColorGray;
+}
+.amiui-form-preview__btn_primary {
+    color: #0BB20C;
+}

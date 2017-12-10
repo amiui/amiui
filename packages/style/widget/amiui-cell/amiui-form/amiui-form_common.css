@@ -1,20 +1,3 @@
-.amiui-shade {
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.4);
-}
-.weui-shade_transparent {
-  position: fixed;
-  z-index: 1000;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-}
 /*
 * Tencent is pleased to support the open source community by making WeUI available.
 * 
@@ -210,87 +193,92 @@
 * either express or implied. See the License for the specific language governing permissions and
 * limitations under the License.
 */
-.amiui-modal {
-  position: fixed;
-  z-index: 1000;
-  right: 8px;
-  left: 8px;
-  bottom: 8px;
-  background-color: #FFFFFF;
-  border-radius: 4px;
-  color: #333333;
-  overflow: hidden;
-}
-.amiui-modal__hd {
-  padding: 1.3em 1.6em 0.8em;
-  text-align: center;
-}
-.amiui-modal__title {
-  font-size: 14px;
-  font-weight: 700;
-  text-align: center;
-}
-.amiui-modal__bd {
-  padding: 0 1.6em 0.8em;
-  min-height: 40px;
-  font-size: 14px;
-  line-height: 1.3;
+/*
+* Tencent is pleased to support the open source community by making WeUI available.
+* 
+* Copyright (C) 2017 THL A29 Limited, a Tencent company. All rights reserved.
+* 
+* Licensed under the MIT License (the "License"); you may not use this file except in compliance
+* with the License. You may obtain a copy of the License at
+* 
+*       http://opensource.org/licenses/MIT
+* 
+* Unless required by applicable law or agreed to in writing, software distributed under the License is
+* distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND,
+* either express or implied. See the License for the specific language governing permissions and
+* limitations under the License.
+*/
+.amiui-label {
+  display: block;
+  width: 105px;
   word-wrap: break-word;
   word-break: break-all;
 }
-.amiui-modal__bd:first-child {
-  padding: 2.7em 20px 1.7em;
-  color: #353535;
+.amiui-input {
+  width: 100%;
+  border: 0;
+  outline: 0;
+  -webkit-appearance: none;
+  background-color: transparent;
+  font-size: inherit;
+  color: inherit;
+  height: 1.47058824em;
+  line-height: 1.47058824;
 }
-.amiui-modal__ft {
-  position: relative;
-  line-height: 52px;
-  font-size: 14px;
-  display: flex;
+.amiui-input::-webkit-outer-spin-button,
+.amiui-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
-.amiui-modal__ft:after {
-  content: " ";
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  height: 1px;
-  border-top: 1px solid #D5D5D6;
-  color: #D5D5D6;
-  transform-origin: 0 0;
-  transform: scaleY(0.5);
-}
-.amiui-modal__btn {
-  text-align: center;
+.amiui-textarea {
   display: block;
-  flex: 1;
-  color: #3CC51F;
-  background-color: #f5f5f5;
-  text-decoration: none;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  position: relative;
+  border: 0;
+  resize: none;
+  width: 100%;
+  color: inherit;
+  font-size: 1em;
+  line-height: inherit;
+  outline: 0;
 }
-.amiui-modal__btn:active {
-  background-color: #EEEEEE;
+.amiui-textarea-counter {
+  color: #B2B2B2;
+  text-align: right;
 }
-.amiui-modal__btn:after {
-  content: " ";
-  position: absolute;
-  left: 0;
+.amiui-cell_warn .amiui-textarea-counter {
+  color: #E64340;
+}
+.amiui-toptips {
+  display: none;
+  position: fixed;
+  transform: translateZ(0);
   top: 0;
-  width: 1px;
-  bottom: 0;
-  border-left: 1px solid #D5D5D6;
-  color: #D5D5D6;
-  transform-origin: 0 0;
-  transform: scaleX(0.5);
+  left: 0;
+  right: 0;
+  padding: 5px;
+  font-size: 14px;
+  text-align: center;
+  color: #FFF;
+  z-index: 5000;
+  word-wrap: break-word;
+  word-break: break-all;
 }
-.amiui-modal__btn:first-child:after {
+.amiui-toptips_warn {
+  background-color: #E64340;
+}
+.amiui-cells_form .amiui-cell__ft {
+  font-size: 0;
+}
+.amiui-cells_form .amiui-icon-warn {
   display: none;
 }
-.amiui-modal__btn_default {
-  color: #555555;
+.amiui-cells_form input,
+.amiui-cells_form textarea,
+.amiui-cells_form label[for] {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
-.amiui-modal__btn_primary {
-  color: #33B4FF;
+.amiui-cell_warn {
+  color: #E64340;
+}
+.amiui-cell_warn .amiui-icon-warn {
+  display: inline-block;
 }

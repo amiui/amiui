@@ -3,29 +3,26 @@
     <img src="./assets/amiui-logo.png">
     <h1>{{ msg }}</h1>
     <h2>组件库</h2>
-    <ul>
-      <li><a @click="amModal">modal</a></li>
-      <li><a @click="amAlert">alert</a></li>
-      <li><a @click="amConfirm">confirm</a></li>
-    </ul>
-    <i class="am-icon am-icon-plus"></i>
-    <i class="am-icon am-icon-minus"></i>
-    <i class="am-icon am-icon-clear"></i>
-    <i class="am-icon am-icon-return"></i>
-    <i class="am-icon am-icon-search"></i>
-    <am-search-bar v-model="packages.searchbar.value" :show-return="true" :show-action="true" placeholder="请输入搜索内容"></am-search-bar>
-    <am-modal title="模态框弹出层" :visible.sync="packages.modal.visible" :btn="['确定','关闭']" dialog="确定删除吗？"></am-modal>
-  </div>
+    <am-modal
+        title="模态框弹出层"
+        :visible.sync="packages.modal.visible"
+        :btn="['确定','关闭']"
+        dialog="确定删除吗？">
+    </am-modal>
 
+    <button @click="amModal">modal</button>
+    <button @click="amAlert">alert</button>
+    <button @click="amConfirm">confirm</button>
+    <am-search-bar v-model="packages.searchbar.value" :show-return="true" :show-action="true" placeholder="请输入搜索内容"></am-search-bar>
+  </div>
 </template>
 
 <script>
-
 export default {
   name: 'app',
-  data () {
+  data(){
     return {
-      msg: 'amiui测试页',
+      msg:'amiui',
       packages:{
         modal:{
           visible:false
@@ -50,8 +47,8 @@ export default {
 
         console.log('yes')
 
-      },(v,m,s)=>{
-        console.log(v,m,s)
+      },()=>{
+        console.log('cancel')
       })
     }
   }

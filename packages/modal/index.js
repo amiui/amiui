@@ -1,7 +1,7 @@
-import modal from './modal.vue'
+import component from './modal.vue'
 
-modal.install = function(Vue) {
-  Vue.component(modal.name, modal);
+component.install = (Vue) => {
+  Vue.component(component.name, component);
 };
 
-export default modal;
+export default component;
