@@ -21,7 +21,7 @@
           <slot name="title"></slot>
           {{ title }}
         </div>
-        <div class="amiui-modal__content amiui-iframe-scroll"
+        <div class="amiui-modal__content"
              :style="contentStyle"
              ref="content">
             <div :class="dialogClass" v-if="$slots.dialog || dialog">

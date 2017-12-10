@@ -86,7 +86,6 @@ const AmiuiFunc = {
           options.yes && options.yes(vm, vm.$el)
         },
         cancel(type) {
-          console.log(1)
           if (!options.cancel || options.cancel(vm, vm.$el, type || 'btn') !== false) {
             this.close()
           }
@@ -185,7 +184,5 @@ const AmiuiFunc = {
     amiui.modal(option)
   }
 };
-
-Vue.prototype.$amiui = AmiuiFunc;
 
 export default AmiuiFunc;
