@@ -28,10 +28,10 @@
               <slot name="dialog"></slot>
               <div v-html="dialog"></div>
             </div>
-          <div v-if="$slots.default || content">
-            <slot name="dialog"></slot>
-            <div v-html="content"></div>
-          </div>
+        </div>
+        <div v-if="$slots.default || content">
+          <slot name="content"></slot>
+          <div v-html="content"></div>
         </div>
         <div v-if="btn.length" class="amiui-modal__footer">
           <a v-if="btn.length > 1"

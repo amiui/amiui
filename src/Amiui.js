@@ -1,7 +1,7 @@
 import Vue from 'vue'
-import AmModal from '../packages/modal/index'
+import Modal from '../packages/modal/index'
 
-Vue.use(AmModal);
+Vue.use(Modal);
 
 const isFunc = f => {
   return typeof f === 'function'
@@ -13,7 +13,7 @@ const isStr = f => {
   return typeof f === 'string'
 };
 
-const AmiuiFunc = {
+const Amiui = {
   /**
    * 函数式调用 asseekMiuiModal
    * @param options 与netMiuiModal参数一致
@@ -129,7 +129,6 @@ const AmiuiFunc = {
    * @param yes  确定回调
    */
   alert(dialog, options, yes) {
-    const amiui = AmiuiFunc;
     let option = isObj(dialog) ? dialog : isObj(options) ? options : {};
     let y = option.yes;
     option.btn = option.btn || ['确定'];
@@ -148,7 +147,7 @@ const AmiuiFunc = {
     };
     option.dialog = isStr(dialog) ? dialog : option.dialog;
     option.title = isStr(options) ? options : (option.title !== undefined ? option.title : '提示');
-    amiui.modal(option)
+    Amiui.modal(option)
   },
   /**
    * 询问框
@@ -158,7 +157,6 @@ const AmiuiFunc = {
    * @param cancel  取消回调
    */
   confirm(dialog, options, yes, cancel) {
-    const amiui = AmiuiFunc;
     let option = typeof dialog === 'object' ? dialog : typeof options === 'object' ? options : {};
     let y = option.yes;
     let c = option.cancel;
@@ -181,8 +179,8 @@ const AmiuiFunc = {
     };
     option.dialog = isStr(dialog) ? dialog : option.dialog;
     option.title = isStr(options) ? options : (option.title !== undefined ? option.title : '消息');
-    amiui.modal(option)
+    Amiui.modal(option)
   }
 };
 
-export default AmiuiFunc;
+export default Amiui;

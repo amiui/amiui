@@ -20,14 +20,8 @@
 </template>
 
 <script>
-import AmModal from "../packages/modal/modal.vue";
-import "../src/AmiuiFunc.js"
-import AmSearchBar from "../packages/searchbar/searchbar.vue";
 
 export default {
-  components: {
-    AmSearchBar,
-    AmModal},
   name: 'app',
   data () {
     return {

@@ -1,32 +1,31 @@
-import Vue from 'vue'
-import AmModal from '../packages/modal/index'
-import AmSearchBar from '../packages/searchbar/index'
-import AmFunc from '../src/AmiuiFunc'
+import Modal from '../packages/modal/index'
+import SearchBar from '../packages/searchbar/index'
+import $amiui from './Amiui'
 
 const components = [
-  AmModal,
-  AmSearchBar
+  Modal,
+  SearchBar
 ];
 
 const install = function(Vue){
   components.map(component => {
     Vue.use(component);
   });
-  Vue.prototype.$amiui = AmFunc;
+  Vue.prototype.$amiui = $amiui;
 };
 
-if (typeof window !== 'undefined' && window.Vue) {
+/*if (typeof window !== 'undefined' && window.Vue) {
   install(window.Vue);
-}
+}*/
 
 export {
-  AmModal,
-  AmSearchBar,
-  AmFunc
+  Modal,
+  SearchBar,
+  $amiui
 }
 
 export default {
-  version: '0.0.3',
+  version: '0.0.32',
   install
 }
 
