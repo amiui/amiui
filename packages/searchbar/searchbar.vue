@@ -18,7 +18,7 @@
 </template>
 <script>
   import './searchbar.css'
-  import '../../src/clickoutside'
+  import '../../src/utils/clickoutside'
   import '../../src/fonts/iconfont.css'
 
   export default {

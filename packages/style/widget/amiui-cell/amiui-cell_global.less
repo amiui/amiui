@@ -80,6 +80,8 @@ z-index:
         }
     }
 }
+
+
 .amiui-cell_primary{
     align-items: flex-start;
 }
@@ -89,4 +91,12 @@ z-index:
 .amiui-cell__ft {
     text-align: right;
     color: @amiuiTextColorGray;
+}
+
+.amiui-cells_empty_line_left {
+  .amiui-cell {
+    &:before {
+      left: 0;
+    }
+  }
 }

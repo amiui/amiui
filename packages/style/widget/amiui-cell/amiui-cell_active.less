@@ -1,0 +1,29 @@
+@import "../../base/fn";
+
+.amiui-cells_active {
+  .amiui-cell__hd {
+    margin-right: 5px;
+  }
+
+}
+
+.amiui-cells__padding-high {
+  .amiui-cell {
+    padding: @amiuiCellGapH @amiuiCellGapH;
+  }
+}
+
+.amiui-cell_active {
+  color: @amiuiColorDefault;
+  .amiui-cell__hd {
+    &:after {
+      content: " ";
+      .setArrow(right, 6px, @amiuiColorDefault, 1px);
+      position: absolute;
+      top: 50%;
+      margin-top: -3px;
+      left: 5px;
+    }
+  }
+}
+

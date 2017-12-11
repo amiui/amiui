@@ -714,7 +714,7 @@ input.amiui-btn_plain-default {
   margin-left: 15px;
 }
 .amiui-btn-area {
-  margin: 1.17647059em 15px 0.3em;
+  margin: 1.33333333em 15px 0.3em;
 }
 .amiui-btn-area_inline {
   display: flex;
@@ -750,10 +750,10 @@ z-index:
 2: .amiui-cells和.amiui-cell的1px线
 */
 .amiui-cells {
-  margin-top: 1.17647059em;
+  margin-top: 1.33333333em;
   background-color: #FFFFFF;
-  line-height: 1.47058824;
-  font-size: 17px;
+  line-height: 1.53333333;
+  font-size: 15px;
   overflow: hidden;
   position: relative;
 }
@@ -834,6 +834,9 @@ z-index:
   text-align: right;
   color: #999999;
 }
+.amiui-cells_empty_line_left .amiui-cell:before {
+  left: 0;
+}
 /*
 * Tencent is pleased to support the open source community by making WeUI available.
 * 
@@ -869,7 +872,7 @@ z-index:
 .amiui-swiped-btn {
   display: block;
   padding: 10px 1em;
-  line-height: 1.47058824;
+  line-height: 1.53333333;
   color: inherit;
 }
 .amiui-swiped-btn_default {
@@ -907,9 +910,9 @@ z-index:
 .amiui-cell_access .amiui-cell__ft:after {
   content: " ";
   display: inline-block;
-  height: 6px;
-  width: 6px;
-  border-width: 2px 2px 0 0;
+  height: 8px;
+  width: 8px;
+  border-width: 1px 1px 0 0;
   border-color: #C8C8CD;
   border-style: solid;
   transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
@@ -1063,8 +1066,8 @@ z-index:
   background-color: transparent;
   font-size: inherit;
   color: inherit;
-  height: 1.47058824em;
-  line-height: 1.47058824;
+  height: 1.53333333em;
+  line-height: 1.53333333;
 }
 .amiui-input::-webkit-outer-spin-button,
 .amiui-input::-webkit-inner-spin-button {
@@ -1313,8 +1316,8 @@ button.amiui-form-preview__btn {
   background-color: transparent;
   width: 100%;
   font-size: inherit;
-  height: 45px;
-  line-height: 45px;
+  height: 43px;
+  line-height: 43px;
   position: relative;
   z-index: 1;
   padding-left: 15px;
@@ -1391,18 +1394,18 @@ button.amiui-form-preview__btn {
 }
 .amiui-vcode-img {
   margin-left: 5px;
-  height: 45px;
+  height: 43px;
   vertical-align: middle;
 }
 .amiui-vcode-btn {
   display: inline-block;
-  height: 45px;
+  height: 43px;
   margin-left: 5px;
   padding: 0 0.6em 0 0.7em;
   border-left: 1px solid #E5E5E5;
-  line-height: 45px;
+  line-height: 43px;
   vertical-align: middle;
-  font-size: 17px;
+  font-size: 15px;
   color: #3CC51F;
 }
 button.amiui-vcode-btn {
@@ -1478,8 +1481,8 @@ button.amiui-vcode-btn {
 * limitations under the License.
 */
 .amiui-cell_switch {
-  padding-top: 6.5px;
-  padding-bottom: 6.5px;
+  padding-top: 5.5px;
+  padding-bottom: 5.5px;
 }
 .amiui-switch {
   appearance: none;
@@ -3069,11 +3072,9 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 @keyframes downSlideUp {
   0% {
-    -webkit-transform: translateY(100%);
     transform: translateY(100%);
   }
   100% {
-    -webkit-transform: translateY(0%);
     transform: translateY(0%);
   }
 }
@@ -3082,11 +3083,9 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 @keyframes downSlideDown {
   0% {
-    -webkit-transform: translateY(0%);
     transform: translateY(0%);
   }
   100% {
-    -webkit-transform: translateY(100%);
     transform: translateY(100%);
   }
 }
@@ -3095,11 +3094,9 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 @keyframes upSlideDown {
   0% {
-    -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
   }
   100% {
-    -webkit-transform: translateY(0%);
     transform: translateY(0%);
   }
 }
@@ -3108,11 +3105,9 @@ input[type="search"]::-webkit-search-results-decoration {
 }
 @keyframes upSlideUp {
   0% {
-    -webkit-transform: translateY(0%);
     transform: translateY(0%);
   }
   100% {
-    -webkit-transform: translateY(-100%);
     transform: translateY(-100%);
   }
 }

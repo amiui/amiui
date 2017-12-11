@@ -2,11 +2,22 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: './src/main.js',
+  entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'index.js'
+    filename: 'index.js',
+    library: 'amiui',       // 模块名称
+    libraryTarget: 'umd',   // 输出格式
+    umdNamedDefine: true    // 是否将模块名称作为 AMD 输出的命名空间
+  },
+  externals: {
+    vue: {
+      root: 'Vue',
+      commonjs: 'vue',
+      commonjs2: 'vue',
+      amd: 'vue'
+    }
   },
   module: {
     rules: [

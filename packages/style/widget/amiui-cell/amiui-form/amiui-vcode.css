@@ -215,18 +215,18 @@
 }
 .amiui-vcode-img {
   margin-left: 5px;
-  height: 45px;
+  height: 43px;
   vertical-align: middle;
 }
 .amiui-vcode-btn {
   display: inline-block;
-  height: 45px;
+  height: 43px;
   margin-left: 5px;
   padding: 0 0.6em 0 0.7em;
   border-left: 1px solid #E5E5E5;
-  line-height: 45px;
+  line-height: 43px;
   vertical-align: middle;
-  font-size: 17px;
+  font-size: 15px;
   color: #3CC51F;
 }
 button.amiui-vcode-btn {
