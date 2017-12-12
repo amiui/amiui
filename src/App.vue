@@ -41,6 +41,13 @@
       <am-cell :swiped-btn="true">可删除项目2</am-cell>
       <am-cell>不可删除项目3</am-cell>
     </am-cells>
+
+    <am-cells :active-type="true"  :access="true">
+      <am-cell>选择项1</am-cell>
+      <am-cell>选择项2</am-cell>
+      <am-cell :active="true">选择项3</am-cell>
+      <am-cell>选择项4</am-cell>
+    </am-cells>
   </div>
 </template>
 

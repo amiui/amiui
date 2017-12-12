@@ -3,7 +3,7 @@
 <style>
 </style>
 <template>
-  <div :class="{'amiui-cells': true , 'amiui-cells_empty_line_left':!cellLineLeft, 'amiui-cells_active':!activeType, 'amiui-cells__padding-high': paddingHigh}">
+  <div :class="{'amiui-cells': true , 'amiui-cells_empty_line_left':!cellLineLeft, 'amiui-cells_active': activeType, 'amiui-cells__padding-high': paddingHigh}">
     <slot></slot>
   </div>
 </template>

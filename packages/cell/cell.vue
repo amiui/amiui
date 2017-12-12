@@ -8,7 +8,8 @@
         'amiui-cell_access': $_swiped ? false : $_access,
         'amiui-cell_active': active,
         'amiui-cell_swiped': $_swiped
-       }">
+       }"
+       @click="onClick">
     <div class="amiui-cell__hd"
          v-if="showHd">
       <i v-if="icon" :class="icon"></i>
@@ -36,7 +37,7 @@
          v-if="showFt">
       <template v-if="$_swiped">
         <a class="amiui-swiped-btn amiui-swiped-btn_warn"
-           @click="remove">
+           @click="onSwipedClick">
           删除
         </a>
       </template>
@@ -49,9 +50,11 @@
 </template>
 <script>
   import './cell.css';
+  import RouterLink from '../../src/mixins/router-link.js'
 
   export default {
     name: 'AmCell',
+    mixins: [RouterLink],
     props: {
       active: {     //父cells必须启用activeType 否则会有样式问题
         type: Boolean, 'default': false
@@ -86,19 +89,19 @@
       }
     },
     computed: {
-      $_isCells() {
+      $_isCellsChild() {
         return this.$parent.$options._componentTag === 'am-cells'
       },
       $_access() {
         return this.access ||
-          (this.$_isCells ? this.$parent.access : false)
+          (this.$_isCellsChild ? this.$parent.access : false)
       },
       $_activeType() {
-        return this.$_isCells ? this.$parent.activeType : false
+        return this.$_isCellsChild ? this.$parent.activeType : false
       },
       $_swiped() {
         return this.swipedBtn ||
-          (this.$_isCells ? this.$parent.swipedBtn : false)
+          (this.$_isCellsChild ? this.$parent.swipedBtn : false)
       },
       showHd() {
         return this.hd || this.$_activeType || this.icon || this.$slots.hd
@@ -107,7 +110,7 @@
         return this.bd || this.$slots.default
       },
       showFt() {
-        return this.ft || this.$_access || this.$slots.ft || this.$_swiped
+        return this.ft || this.access || this.$slots.ft || this.$_swiped
       }
     },
     methods: {
@@ -135,7 +138,11 @@
           this.startX = 0;
         }
       },
-      remove(){
+      onClick() {
+        this.$emit('click');
+        this.routerLink();
+      },
+      onSwipedClick(){
         this.$emit('swiped-click')
       }
     },

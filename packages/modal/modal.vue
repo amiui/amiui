@@ -54,7 +54,7 @@
 <script>
   import './modal.css'
   import '../style/widget/amiui-animate/amiui-animate.css'
-  import visibleSyncShow from '../../src/mixins/visibleSyncShow.js';
+  import visibleSyncShow from '../../src/mixins/visible-sync-show.js';
 
   export default {
     name: 'AmModal',

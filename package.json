@@ -2,7 +2,7 @@
   "name": "amiui",
   "description": "vue miui",
   "main": "src/index.js",
-  "version": "0.0.33",
+  "version": "0.0.35",
   "keywords": [
     "amiui",
     "miui",
@@ -17,7 +17,6 @@
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
-    "fastclick": "^1.0.6",
     "vue": "^2.4.4"
   },
   "browserslist": [
